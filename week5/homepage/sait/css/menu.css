@@ -1,0 +1,36 @@
+ul
+  {
+	list-style-type:none;
+	overflow:hidden;
+	background-color:darkGreen;
+  }
+
+li
+  {
+	float: left;
+  }
+
+li a
+  {
+	display:block;
+	font-family: 'Permanent Marker', cursive;
+ 	color:black;
+	text-align: center;
+	padding:15px;
+	text-decoration:none;
+  }
+
+li a:hover
+  {
+	background-color:chartreuse;
+  }
+
+p a:hover
+{
+	color:Orange;
+}
+
+p a:active
+{
+	color:OrangeRed;
+}

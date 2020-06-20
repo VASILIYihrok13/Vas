@@ -1,0 +1,70 @@
+h1
+ {
+	font-family: 'Permanent Marker', cursive;
+	text-align:center;
+	border:2px solid black;
+	padding:20px;
+	background:chartreuse;
+ }
+
+body
+ {
+	font-family:'quicksand', sans-serif;
+	background-color:Azure;
+	width:97%;
+	font-size:125%;
+	overflow:auto;
+	padding:10px;
+ }
+
+button
+ {
+	width:32%;
+	height:40px;
+	background-color:#222222;
+	color:#eeeeee;
+	border:1px solid yellow;
+ }
+
+p
+ {
+	padding:7px;
+	margin:10px;
+ }
+
+img
+ {
+	padding:10px;
+	width:465px;
+	height:350px;
+ }
+
+.super
+ {	
+	margin: 20px;
+	padding: 30px;
+	width: 330px;
+	height:420px;
+ }
+
+#piza
+ {
+	text-align:center;
+ }
+
+.wide
+{
+	width:400px;
+	margin:10px;
+}
+
+div
+ {
+	background-color:floralwhite;
+ }
+
+h2
+ {
+	text-align:center;
+	font-family: 'Permanent Marker', cursive;
+ }
