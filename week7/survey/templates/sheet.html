@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<table id="hogwards"class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Ім'я</th>
+      <th scope="col">Гуртожиток</th>
+      <th scope="col">Додаткове заняття</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for student in students %}
+        <tr>
+        <th scope="row">&#9745</th>
+        <td>{{ student[0] }}</td>
+        <td>{{ student[1] }}</td>
+        <td>{{ student[2] }}</td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

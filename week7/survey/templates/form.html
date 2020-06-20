@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Анкета</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post" class="needs-validation" novalidate>
+    <!-- для вводу імені-->
+        <div class="form-group">
+            <input id="name" autocomplete="off" autofocus="" class="form-control" name="name" placeholder="Ім'я" type="text" required>
+            <div class="invalid-feedback">
+              Введіть будь ласка ім'я
+            </div>
+        </div>
+
+    <!-- для вибору гуртожитка -->
+        <div class="form-group">
+            <select class="form-control" name="dorm" id="exampleFormControlSelect1" required>
+              <option value="" selected disabled hidden>Виберіть гуртожиток</option>
+              <option value="Ґрифіндор">Ґрифіндор</option>
+              <option value="Рейвенклов">Рейвенклов</option>
+              <option value="Гафелпаф">Гафелпаф</option>
+              <option value="Слизерин">Слизерин</option>
+            </select>
+            <div class="invalid-feedback">Ви не вибрали гуртожиток</div>
+         </div>
+
+    <!-- заняття за замовчуванням -->
+        <h5> Оберіть додаткове заняття: </h5>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="defaultCheck1" disabled checked>
+          <label class="form-check-label" for="defaultCheck1">
+            Заклинання
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="defaultCheck2" disabled checked>
+          <label class="form-check-label" for="defaultCheck2">
+            Захист від темних мистецтв
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="defaultCheck1" disabled checked>
+          <label class="form-check-label" for="defaultCheck1">
+            Історія магії
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled checked>
+          <label class="form-check-label" for="defaultCheck2">
+            Зіллєваріння
+          </label>
+        </div>
+
+    <!-- одне заняття додатково на вибір -->
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="subject" id="subject1" value="Догляд за магічними тваринами" required>
+          <label class="form-check-label" for="subject">Догляд за магічними тваринами</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="subject" id="subject2" value="Уроки польотів на мітлі" required>
+          <label class="form-check-label" for="subject2">Уроки польотів на мітлі</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="subject" id="subject3" value="Гербалогія" required>
+          <label class="form-check-label" for="subject3">Гербалогія</label>
+          <div class="invalid-feedback">Будь ласка, виберіть додаткове заняття</div>
+        </div>
+        <br>
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+
+    <script>
+
+      (function() {
+      'use strict';
+       window.addEventListener('load', function() {
+         var forms = document.getElementsByClassName('needs-validation');
+         var validation = Array.prototype.filter.call(forms, function(form) {
+           form.addEventListener('submit', function(event) {
+             if (form.checkValidity() === false) {
+               event.preventDefault();
+               event.stopPropagation();
+             }
+           form.classList.add('was-validated');
+           }, false);
+        });
+       }, false);
+      })();
+
+
+    </script>
+
+{% endblock %}
