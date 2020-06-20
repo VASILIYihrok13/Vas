@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %} history {% endblock %}
+
+{% block main %}
+    <table class ="table table-striped">
+        <tr>
+            <th>Symbol</th>
+            <th>Transaction</th>
+            <th>cost</th>
+            <th>Shares</th>
+            <th>date</th>
+            <th>time</th>
+        </tr>
+        {% for names in info %}
+        <tr>
+            <td>{{ names['symbol'] }}</td>
+            <td>{{ names['purchase'] }}</td>
+            <td>{{ names['cost'] }}</td>
+
+            {% if names['purchase'] == 'buy' %}
+                <td>{{ names['number_buy'] }}</td>
+            {% else %}
+                <td>{{ names['number_sell'] }}</td>
+            {% endif %}
+
+            <td>{{ names['date'] }}</td>
+            <td>{{ names['time'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

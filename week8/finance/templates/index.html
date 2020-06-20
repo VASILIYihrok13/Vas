@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %} MONEY {% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Symbol</th>
+          <th scope="col">Name</th>
+          <th scope="col">Shares</th>
+          <th scope="col">Price</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tfoot id="tfoot">
+        <tr>
+          <td> CASH </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td> {{ cash }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{ money }}</td>
+        </tr>
+      </tfoot>
+      <tbody>
+        {% for names in info %}
+          {% if names['SUM(number_buy) - SUM(number_sell)'] > 0 %}
+          <tr>
+            <td>{{ names['symbol'] }}</th>
+            <td>{{ names['corporation'] }}</td>
+            <td>{{ names['SUM(number_buy) - SUM(number_sell)'] }}</td>
+            <td>{{ names['price'] }}</td>
+            <td>{{ names['total'] }}</td>
+          </tr>
+          {% endif %}
+        {% endfor %}
+
+      </tbody>
+    </table>
+{% endblock %}
